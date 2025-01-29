@@ -1,0 +1,17 @@
+{
+    "folder-customization.folders": [
+        {
+            "path": "BACK-END/services/",
+            "badge": "😀"
+        },
+        {
+            "path": "BACK-END/routes/",
+            "badge": "😀"
+        },
+        {
+            "path": "BACK-END/controllers/",
+            "badge": "😀"
+        }
+    ],
+    "explorer.sortOrder": "filesFirst"
+}

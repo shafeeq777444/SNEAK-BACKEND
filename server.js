@@ -49,6 +49,6 @@ app.use(errorHandler); // Handle errors for the application
 
 
 // start the server
-app.listen(application.port, () => {
+app.listen(process.env.port, () => {
     console.log("port is worked on 4600");
 });

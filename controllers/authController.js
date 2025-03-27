@@ -27,20 +27,26 @@ exports.login = asycHandler(async (req, res) => {
     console.log(accessToken, 'new')
 
     // localStorage.set('accesToken', accessToken)
-    
+    const refreshTokenExpire=new Date();
+    refreshTokenExpire.setTime(refreshTokenExpire.getTime()+ 7*24*60*60*1000)
+
     res.cookie("refreshToken", refreshToken, {
         httpOnly: true,
         secure: true,
         sameSite: "none",
         path: '/',
-        maxAge:7*24*60*60*1000
+        // maxAge:7*24*60*60*1000
+        expires:refreshTokenExpire
     });
+    const accessTokenExpire=new Date();
+    accessTokenExpire.setTime(accessTokenExpire.getTime()+1*24*60*60*1000)
     res.cookie("accessToken", accessToken, {
         httpOnly: true, // This makes the cookie inaccessible to JavaScript
         secure: true,
-        maxAge: 1*24*60*60*1000, // Access token expiration time (15 minutes)
+        // maxAge: 1*24*60*60*1000, // Access token expiration time (15 minutes)
         sameSite: "none", // Prevent CSRF attacks
-        path: '/'
+        path: '/',
+        expires:accessTokenExpire
     });
 
 

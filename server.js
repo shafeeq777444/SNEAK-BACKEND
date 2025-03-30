@@ -19,7 +19,7 @@ const app = express();
 
 // Enable CORS for frontend running on localhost:5173
 app.use(cors({
-    origin: ['https://sneak-nu.vercel.app','https://sneak-mohamed-shafeeqs-projects.vercel.app','http://localhost:5173'],  // Frontend URL
+    origin: ['https://sneak-nu.vercel.app','https://sneak-mohamed-shafeeqs-projects.vercel.app','http://localhost:5173','https://evoque-njzk.onrender.com'],  // Frontend URL
     methods: 'GET, POST, PUT, DELETE,PATCH',
     credentials: true  // Allow cookies if needed
   }));
